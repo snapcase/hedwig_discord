@@ -2,6 +2,8 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
+  config :logger,
+    level: :warn
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,
@@ -10,11 +12,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :hedwig_slack, key: :value
+#     config :hedwig_discord, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:hedwig_slack, :key)
+#     Application.get_env(:hedwig_discord, :key)
 #
 # Or configure a 3rd-party app:
 #

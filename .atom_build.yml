@@ -1,0 +1,3 @@
+build: mix compile
+test: mix test
+deps: mix deps.get

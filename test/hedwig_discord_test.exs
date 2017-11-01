@@ -1,6 +1,6 @@
-defmodule HedwigSlackTest do
+defmodule HedwigDiscordTest do
   use ExUnit.Case
-  doctest HedwigSlack
+  doctest HedwigDiscord
 
   test "the truth" do
     assert 1 + 1 == 2
