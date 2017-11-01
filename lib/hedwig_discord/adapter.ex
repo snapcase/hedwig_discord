@@ -1,5 +1,6 @@
 defmodule Hedwig.Adapters.Discord do
   use Hedwig.Adapter
+  alias Nostrum.Api
 
   defmodule State do
     defstruct conn: nil,
@@ -24,7 +25,7 @@ defmodule Hedwig.Adapters.Discord do
     {:noreply, state}
   end
 
-  def handle_cast({:reply, %{user: user, text: text} = msg}, %{conn: conn} = state) do
+  def handle_cast({:reply, %{user: user, text: text} = msg}, state) do
     Api.create_message(msg.room, "<@#{user.id}|#{user.name}>: #{text}")
     {:noreply, state}
   end
@@ -53,12 +54,6 @@ defmodule Hedwig.Adapters.Discord do
     {:noreply, state}
   end
 
-  def handle_info({:channels, channels}, state) do
-    {:noreply, %{state | channels: reduce(channels, state.channels)}}
-  end
-
-  # Default event handler, if you don't include this, your consumer WILL crash if
-  # you don't have a method definition for each event type.
   def handle_event(_, state) do
     {:ok, state}
   end

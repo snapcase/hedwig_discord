@@ -1,6 +1,5 @@
 defmodule HedwigDiscord.Connection do
   use Nostrum.Consumer
-  alias Nostrum.Api
   require Logger
 
   def start_link do
