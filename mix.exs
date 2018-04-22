@@ -37,11 +37,8 @@ defmodule HedwigDiscord.Mixfile do
       {:hedwig, "~> 1.0"},
       {:poison, "~> 3.0"},
       {:websockex, "~> 0.4.0"},
-      {:nostrum, git: "https://github.com/Kraigie/nostrum.git"},
-      {:gun,
-       git: "https://github.com/ninenines/gun.git",
-       ref: "dd1bfe4d6f9fb277781d922aa8bbb5648b3e6756",
-       override: true},
+      {:nostrum, github: "Kraigie/nostrum"},
+      {:gun, github: "ninenines/gun", tag: "1.0.0-pre.5", override: true},
 
       # Test dependencies
       #  {:bypass, "~> 0.5", only: :test},
