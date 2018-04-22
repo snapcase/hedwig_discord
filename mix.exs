@@ -39,6 +39,7 @@ defmodule HedwigDiscord.Mixfile do
       {:websockex, "~> 0.4.0"},
       {:nostrum, github: "Kraigie/nostrum"},
       {:gun, github: "ninenines/gun", tag: "1.0.0-pre.5", override: true},
+      {:httpoison, "~>1.0", override: true},
 
       # Test dependencies
       #  {:bypass, "~> 0.5", only: :test},
