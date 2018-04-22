@@ -34,7 +34,10 @@ defmodule Hedwig.Adapters.Discord do
     {:noreply, state}
   end
 
-  def handle_info(%{"type" => "message", "user" => user} = msg, %{robot: robot, users: users} = state) do
+  def handle_info(
+        %{"type" => "message", "user" => user} = msg,
+        %{robot: robot, users: users} = state
+      ) do
     msg = %Hedwig.Message{
       ref: make_ref(),
       robot: robot,
