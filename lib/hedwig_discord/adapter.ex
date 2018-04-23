@@ -21,12 +21,12 @@ defmodule Hedwig.Adapters.Discord do
   end
 
   def handle_cast({:send, msg}, state) do
-    Api.create_message(msg.room, msg.text)
+    Api.create_message(msg.room, content: msg.text)
     {:noreply, state}
   end
 
   def handle_cast({:reply, %{user: user, text: text} = msg}, state) do
-    Api.create_message(msg.room, "<@#{user.id}|#{user.name}>: #{text}")
+    Api.create_message(msg.room, content: "<@#{user.id}|#{user.name}>: #{text}")
     {:noreply, state}
   end
 

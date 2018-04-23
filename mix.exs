@@ -21,7 +21,7 @@ defmodule HedwigDiscord.Mixfile do
   def application do
     [
       mod: {HedwigDiscord, []},
-      applications: [
+      extra_applications: [
         :logger,
         :hackney,
         :hedwig,
