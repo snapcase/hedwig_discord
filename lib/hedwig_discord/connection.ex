@@ -1,35 +1,18 @@
 defmodule HedwigDiscord.Connection do
-  use Nostrum.Consumer
-  alias Nostrum.Api
+  use Coxir
   require Logger
 
-  def start_link do
-    Consumer.start_link(__MODULE__)
-  end
-
-  def handle_event({:MESSAGE_CREATE, {msg}, _ws_state}) do
-    Logger.debug(inspect(msg))
-    case msg.content do
-      # "!sleep" ->
-      #   Api.create_message(msg.channel_id, content: "Going to sleep...")
-      #   # This won't stop other events from being handled.
-      #   Process.sleep(3000)
-
-      # "!ping" ->
-      #   Api.create_message(msg.channel_id, content: "pyongyang!")
-
-      # "!raise" ->
-      #   # This won't crash the entire Consumer.
-      #   raise "No problems here!"
-
+  def handle_event({:MESSAGE_CREATE, message}, state) do
+    Logger.debug(inspect(message))
+    case message.content do
       _ ->
         :ignore
     end
+
+    {:ok, state}
   end
 
-  # Default event handler, if you don't include this, your consumer WILL crash if
-  # you don't have a method definition for each event type.
-  def handle_event(_event) do
-    :noop
+  def handle_event(_event, state) do
+    {:ok, state}
   end
 end

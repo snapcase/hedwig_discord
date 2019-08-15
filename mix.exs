@@ -1,7 +1,7 @@
 defmodule HedwigDiscord.Mixfile do
   use Mix.Project
 
-  @version "1.0.0"
+  @version "1.1.0"
 
   def project do
     [
@@ -26,7 +26,7 @@ defmodule HedwigDiscord.Mixfile do
         :hackney,
         :hedwig,
         :poison,
-        :nostrum
+        :coxir
       ]
     ]
   end
@@ -34,9 +34,7 @@ defmodule HedwigDiscord.Mixfile do
   defp deps do
     [
       {:hedwig, "~> 1.0"},
-      {:poison, "~> 3.0"},
-      {:websockex, "~> 0.4.0"},
-      {:nostrum, github: "Kraigie/nostrum"},
+      {:coxir, git: "https://github.com/satom99/coxir.git"},
 
       # Test dependencies
       #  {:bypass, "~> 0.5", only: :test},
