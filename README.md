@@ -12,12 +12,13 @@ PRs welcome (note the code of conduct plx), but don't use this if you want somet
 
 Edit or create your config file:
 
-To run Nostrum you need the following two fields:
+Before setting up a consumer, coxir must be configured as follows.
 
 ```elixir
-config :nostrum,
-  token: "TOKEN", # The token of your bot as a string
-  num_shards: 2 # The number of shards you want to run your bot under, or :auto.
+config :coxir,
+  token: "",
+  shards: 1, # optional
+  ffmpeg: "" # optional
 ```
 
 ## LICENSE
