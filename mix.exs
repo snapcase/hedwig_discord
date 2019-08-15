@@ -33,13 +33,10 @@ defmodule HedwigDiscord.Mixfile do
 
   defp deps do
     [
-      {:hackney, "~> 1.10", override: true},
       {:hedwig, "~> 1.0"},
       {:poison, "~> 3.0"},
       {:websockex, "~> 0.4.0"},
       {:nostrum, github: "Kraigie/nostrum"},
-      {:gun, github: "ninenines/gun", tag: "1.0.0-pre.5", override: true},
-      {:httpoison, "~>1.0", override: true},
 
       # Test dependencies
       #  {:bypass, "~> 0.5", only: :test},
