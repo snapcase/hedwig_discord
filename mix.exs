@@ -25,7 +25,6 @@ defmodule HedwigDiscord.Mixfile do
         :logger,
         :hackney,
         :hedwig,
-        :poison,
         :coxir
       ]
     ]
